@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --stripe-angle: 115deg;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Offset anchored sections so the sticky header doesn't cover headings. */
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-color: theme("colors.sand.DEFAULT");
+  color: theme("colors.ink");
+}
+
+/* Visible keyboard focus across the site. */
+:focus-visible {
+  outline: 3px solid theme("colors.lime.DEFAULT");
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@layer components {
+  /* Freshly-mowed-lawn diagonal stripe motif. */
+  .lawn-stripes {
+    background-image: repeating-linear-gradient(
+      var(--stripe-angle),
+      theme("colors.green.900") 0,
+      theme("colors.green.900") 38px,
+      theme("colors.green.700") 38px,
+      theme("colors.green.700") 76px
+    );
+  }
+
+  /* Dark radial vignette layered over the stripes. */
+  .lawn-vignette {
+    background-image: radial-gradient(
+      120% 120% at 50% 30%,
+      rgba(21, 49, 31, 0.15) 0%,
+      rgba(21, 49, 31, 0.55) 55%,
+      rgba(21, 49, 31, 0.88) 100%
+    );
+  }
+
+  .btn-pill {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-display font-semibold transition-transform transition-colors;
+  }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
