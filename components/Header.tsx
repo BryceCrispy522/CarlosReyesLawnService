@@ -7,6 +7,7 @@ import { LeafIcon, PhoneIcon } from "./icons";
 const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#why-us", label: "Why Us" },
+  { href: "#work", label: "Our Work" },
   { href: "#reviews", label: "Reviews" },
   { href: "#contact", label: "Contact" },
 ];
