@@ -2,7 +2,7 @@
   // Cloudflare Workers/Pages config for this Next.js static export.
   // The site builds to ./out via `npm run build` (output: 'export' in next.config.mjs),
   // so we serve those static assets directly and do NOT use OpenNext auto-detection.
-  "name": "carlos-reyes-lawn-service",
+  "name": "carlosreyeslawnservice",
   "compatibility_date": "2026-06-21",
   "assets": {
     "directory": "./out"
