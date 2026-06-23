@@ -1,17 +1,21 @@
 import { business, serviceAreaLine } from "@/lib/business";
 import { PhoneIcon } from "./icons";
 import { StatRow } from "./StatRow";
+import { ScrollMower } from "./ScrollMower";
 
 export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate overflow-hidden lawn-stripes"
+      className="relative isolate overflow-hidden bg-green-900"
       aria-labelledby="hero-heading"
     >
-      <div className="absolute inset-0 lawn-vignette" aria-hidden />
+      {/* Stripes + the mower that rides down one of them (rendered together). */}
+      <ScrollMower />
 
-      <div className="relative mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 sm:py-32">
+      <div className="absolute inset-0 z-[1] lawn-vignette" aria-hidden />
+
+      <div className="relative z-20 mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 sm:py-32">
         <p className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-lime">
           {serviceAreaLine}
         </p>
